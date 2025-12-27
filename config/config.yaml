@@ -6,8 +6,9 @@ audio:
 
 # Model Configuration
 model:
-  base_model: "tiny"
+  size: "tiny"
   language: "en"
+  device: 1
 
 # Paths
 paths:

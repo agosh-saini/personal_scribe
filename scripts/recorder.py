@@ -10,7 +10,7 @@ from pathlib import Path
 class AudioRecorder:
     """Handles audio recording from microphone"""
     
-    def __init__(self, sample_rate=16000, channels=1, output_dir="data/recordings"):
+    def __init__(self, sample_rate=16000, channels=1, output_dir="data/recordings", device=None):
         """
             Initialize the AudioRecorder
 
@@ -18,11 +18,13 @@ class AudioRecorder:
                 sample_rate: Sample rate of the audio
                 channels: Number of audio channels
                 output_dir: Directory to save recordings
+                device: ID of the device to use for recording
         """
         self.sample_rate = sample_rate
         self.channels = channels
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.device_id = device
         
     def list_devices(self):
         """

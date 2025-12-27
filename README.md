@@ -1,11 +1,40 @@
 # Personal Scribe
 
 Personal Scribe is a Python-based tool for continuous audio recording and
-automatic transcription using OpenAI's Whisper model.
+automatic transcription using OpenAI's Whisper Tiny model.
 
-NEXT STEPS:
+# Next Steps
 
-- ADDING TRANCRIPTION OF AUDIO COMING INTO THE SPEAKERS
+Testing using an actual call to see if it works.
+
+## System Audio Recording Setup (BlackHole)
+
+To record system audio (what you hear: Zoom, YouTube, etc.) and optionally your
+microphone at the same time, follow these steps:
+
+### 1. Install BlackHole
+
+Recommended for macOS (free).
+
+```bash
+brew install blackhole-2ch
+```
+
+### 2. Audio MIDI Setup
+
+1. Open **Audio MIDI Setup** (search in Spotlight).
+2. **Create Multi-Output Device** (for hearing audio while recording):
+   - Click `+` → **Create Multi-Output Device**.
+   - Check **BlackHole 2ch**.
+   - Check your **Headphones/Speakers**.
+   - _Set this Multi-Output Device as your mac's system output in Sound
+     Settings._
+3. **Create Aggregate Device** (to capture Mic + System Audio):
+   - Click `+` → **Create Aggregate Device**.
+   - Check **BlackHole 2ch**.
+   - Check your **Microphone**.
+   - _Select this Aggregate Device (or just BlackHole if you only want system
+     audio) in the application._
 
 ## Prerequisites
 
@@ -45,12 +74,12 @@ You can customize the behavior by editing `config/config.yaml`:
 
 ```yaml
 audio:
-    sample_rate: 16000
-    chunk_duration: 60
+  sample_rate: 16000
+  chunk_duration: 60
 
 model:
-    base_model: "tiny"
-    language: "en"
+  base_model: "tiny"
+  language: "en"
 ```
 
 ## License
