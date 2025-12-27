@@ -1,0 +1,15 @@
+# Audio Configuration
+audio:
+  sample_rate: 16000
+  channels: 1
+  chunk_duration: 60 # seconds
+
+# Model Configuration
+model:
+  base_model: "tiny"
+  language: "en"
+
+# Paths
+paths:
+  recordings: "data/recordings"
+  transcripts: "data/transcripts"
