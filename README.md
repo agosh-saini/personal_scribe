@@ -75,7 +75,7 @@ You can customize the behavior by editing `config/config.yaml`:
 ```yaml
 audio:
   sample_rate: 16000
-  chunk_duration: 60
+  chunk_duration: 10
 
 model:
   base_model: "tiny"

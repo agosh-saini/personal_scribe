@@ -2,7 +2,7 @@
 audio:
   sample_rate: 16000
   channels: 1
-  chunk_duration: 60 # seconds
+  chunk_duration: 10 # seconds
 
 # Model Configuration
 model:
