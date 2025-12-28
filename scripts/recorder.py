@@ -67,14 +67,21 @@ class AudioRecorder:
             dtype='int16',
             device=getattr(self, 'device_id', None)
         )
-        sd.wait()
-        
+        try:
+            sd.wait()
+        except KeyboardInterrupt:
+            sd.stop()
+            print("\nStopping recording early... Saving partial audio.")
+            write(str(filepath), self.sample_rate, recording)
+            print(f"Recording saved to {filepath}")
+            raise
+
         write(str(filepath), self.sample_rate, recording)
         print(f"Recording saved to {filepath}")
         
         return filepath
     
-    def continuous_record(self, chunk_duration=60, consolidate=True, callback=None, max_recordings=60):
+    def continuous_record(self, chunk_duration=10, consolidate=True, callback=None, max_recordings=60):
         """
             Continuously record in chunks
 

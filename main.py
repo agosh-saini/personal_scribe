@@ -156,8 +156,8 @@ class WhisperNotetaker:
         print("="*60)
         
         # Get chunk duration
-        chunk_duration = input("Chunk duration in seconds (default 60): ").strip()
-        chunk_duration = int(chunk_duration) if chunk_duration else 60
+        chunk_duration = input("Chunk duration in seconds (default 10): ").strip()
+        chunk_duration = int(chunk_duration) if chunk_duration else 10
         
         # Calculate max recording time (1 hour = 3600 seconds)
         max_duration = 3600
