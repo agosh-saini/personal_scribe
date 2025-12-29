@@ -9,8 +9,9 @@ Testing using an actual call to see if it works.
 
 ## System Audio Recording Setup (BlackHole)
 
-To record system audio (what you hear: Zoom, YouTube, etc.) and optionally your
-microphone at the same time, follow these steps:
+To record system audio (what you hear: Zoom, YouTube, etc.). Currently running
+into issues with recording from the microphone at the same time. I believe it is
+a permissions issue.
 
 ### 1. Install BlackHole
 
@@ -62,25 +63,15 @@ Run the main application:
 python main.py
 ```
 
-- The application will start recording immediately.
+- The application will provide options to things such as start recording, stop
+  recording, and view the transcript.
 - Transcripts (TXT and JSON) are saved to `data/transcripts`.
 - Raw recordings are saved to `data/recordings`.
-- Press `Ctrl+C` to stop the recording session. The application will stop
-  recording and consolidate the audio chunks.
+- Press `Ctrl+C` to stop the recording session and 0 to exit the application.
 
 ## Configuration
 
 You can customize the behavior by editing `config/config.yaml`:
-
-```yaml
-audio:
-  sample_rate: 16000
-  chunk_duration: 10
-
-model:
-  base_model: "tiny"
-  language: "en"
-```
 
 ## License
 
