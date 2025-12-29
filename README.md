@@ -5,7 +5,8 @@ automatic transcription using OpenAI's Whisper Tiny model.
 
 # Next Steps
 
-Testing using an actual call to see if it works.
+Tested with a call and it worked. Next steps are to get it to also transcribe
+from the microphone.
 
 ## System Audio Recording Setup (BlackHole)
 
